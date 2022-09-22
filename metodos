@@ -20,5 +20,5 @@ func (s Student) Media() float32 {
 	for _, vlr := range s.notas {
 		soma += float32(vlr)
 	}
-	return float32(soma / float32(len(s.notas)))
+	return soma / float32(len(s.notas))
 }
