@@ -1,0 +1,23 @@
+package main
+
+import "fmt"
+
+type NumberType interface {
+	int | float32 | float64
+}
+
+func addList[T NumberType](list []T) T {
+	var sum T
+	for _, item := range list {
+		sum += item
+	}
+
+	return sum
+}
+
+func main() {
+	fmt.Println("Teste Generics")
+	fmt.Println(addList([]int{1, 2, 3}))
+	fmt.Println(addList([]float32{1, 2, 3}))
+	fmt.Println(addList([]float64{1.1, 1, 2, 3}))
+}
