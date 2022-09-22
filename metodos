@@ -1,0 +1,24 @@
+package main
+
+import "fmt"
+
+func main() {
+	student1 := Student{"Rodrigo", []int{70, 80, 80}, 20}
+
+	fmt.Println(student1.Media())
+
+}
+
+type Student struct {
+	nome  string
+	notas []int
+	idade int
+}
+
+func (s Student) Media() float32 {
+	var soma float32
+	for _, vlr := range s.notas {
+		soma += float32(vlr)
+	}
+	return float32(soma / float32(len(s.notas)))
+}
